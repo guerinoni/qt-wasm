@@ -10,7 +10,20 @@ Docker image for Qt WebAssembly
 
 ## Create container
 
-Example that create container with name webassembly from image with name qtwa binding port 8080 of the host machine with 8080 of container and bind local folder with src folder of container
+Example that create container with name webassembly from image with name qtwa binding port 8080 of the host machine with 30000 of container and bind local folder with home folder of container
 ```
-docker run -it -p 8080:80 -v $(pwd):/home --name webassembly qtwa
+docker run -it -p 8080:30000 -v <project_dir>:/home --name webassembly qtwa
 ```
+
+## Usage
+
+Inside docker container
+```
+cd <project_dir>
+mkdir build
+cd build
+qmake ..
+make
+emrun --no_browser --port 30000 <project_name>.html
+```
+Open your host browser and go to `localhost:8080/<project_name>.html`.
