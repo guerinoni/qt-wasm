@@ -1,4 +1,4 @@
-# qt-wasm
+# qt-wasm ![Docker Image CI](https://github.com/guerinoni/qt-wasm/workflows/Docker%20Image%20CI/badge.svg)
 Docker image for Qt WebAssembly
 
 ## Build
