@@ -1,4 +1,5 @@
 FROM    ubuntu:18.04
+LABEL   maintainer="guerinoni.federico@gmail.com"
 
 RUN     apt update && apt -qq install -y --no-install-recommends    \
         git                                                         \
@@ -36,7 +37,7 @@ RUN     ./configure                 \
         --confirm-license
 RUN     make
 
-ENV     PATH "/qt-everywhere-src-5.15.0/qtbase/bin/qmake:$PATH"
+ENV     PATH "/qt-everywhere-src-5.15.0/qtbase/bin/:$PATH"
 
 WORKDIR /home
 
