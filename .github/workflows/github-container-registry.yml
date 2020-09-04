@@ -1,0 +1,26 @@
+name: GitHub Container Registry
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  GHCR:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: docker build -t qtwa .
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@master
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.CR_PAT }}
+
+    - name: Publish
+      run: |
+        docker tag qtwa ghcr.io/guerinoni/qt-wasm:latest
+        docker push ghcr.io/guerinoni/qt-wasm
