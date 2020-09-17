@@ -12,9 +12,9 @@ RUN     apt update && apt -qq install -y --no-install-recommends    \
 RUN     git clone https://github.com/emscripten-core/emsdk.git 	&& \
         cd emsdk                                                && \
         git pull                                                && \
-        git checkout 1.39.8                                     && \
-        ./emsdk install 1.39.8                                  && \
-        ./emsdk activate 1.39.8                                 && \
+        git checkout 2.0.4                                     && \
+        ./emsdk install 2.0.4                                  && \
+        ./emsdk activate 2.0.4                                 && \
         ./emsdk construct_env > /dev/null                       && \
         sed -i -e "/EM_CACHE/d" emsdk_set_env.sh
 
