@@ -1,5 +1,6 @@
 # qt-wasm 
 ![Docker Image CI](https://github.com/guerinoni/qt-wasm/workflows/Docker%20Image%20CI/badge.svg)
+![GitHub Container Registry](https://github.com/guerinoni/qt-wasm/workflows/GitHub%20Container%20Registry/badge.svg)
 
 Docker image for Qt WebAssembly
 
@@ -7,7 +8,7 @@ Docker image for Qt WebAssembly
 ```
 - clone repository
 - cd qt-wasm
-- docker build -t qtwa .
+- buildroot-env
 ```
 
 ## Create container
