@@ -1,6 +1,7 @@
 FROM    ubuntu:20.04
 LABEL   maintainer="guerinoni.federico@gmail.com"
 
+RUN     ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 RUN     DEBIAN_FRONTEND=noninteractive apt update && apt -qq install -y --no-install-recommends    \
         git                                                         \
         cmake                                                       \
