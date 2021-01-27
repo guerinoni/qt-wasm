@@ -1,7 +1,7 @@
 FROM    ubuntu:20.04
 LABEL   maintainer="guerinoni.federico@gmail.com"
 
-RUN     apt update && apt -qq install -y --no-install-recommends    \
+RUN     DEBIAN_FRONTEND=noninteractive apt update && apt -qq install -y --no-install-recommends    \
         git                                                         \
         cmake                                                       \
         wget                                                        \
