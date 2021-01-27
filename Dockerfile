@@ -1,4 +1,4 @@
-FROM    ubuntu:18.04
+FROM    ubuntu:20.04
 LABEL   maintainer="guerinoni.federico@gmail.com"
 
 RUN     apt update && apt -qq install -y --no-install-recommends    \
@@ -18,10 +18,10 @@ RUN     git clone https://github.com/emscripten-core/emsdk.git 	&& \
         ./emsdk construct_env > /dev/null                       && \
         sed -i -e "/EM_CACHE/d" emsdk_set_env.sh
 
-RUN     wget -c https://download.qt.io/archive/qt/5.15/5.15.0/single/qt-everywhere-src-5.15.0.tar.xz
-RUN     tar -xvf qt-everywhere-src-5.15.0.tar.xz
+RUN     wget -c https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
+RUN     tar -xvf qt-everywhere-src-5.15.2.tar.xz
 
-WORKDIR /qt-everywhere-src-5.15.0
+WORKDIR /qt-everywhere-src-5.15.2
 
 ENV     PATH "/emsdk:/emsdk/upstream/emscripten:/emsdk/node/12.9.1_64bit/bin:$PATH"
 ENV     EMSDK "/emsdk"
@@ -37,7 +37,7 @@ RUN     ./configure                 \
         --confirm-license
 RUN     make
 
-ENV     PATH "/qt-everywhere-src-5.15.0/qtbase/bin/:$PATH"
+ENV     PATH "/qt-everywhere-src-5.15.2/qtbase/bin/:$PATH"
 
 WORKDIR /home
 
