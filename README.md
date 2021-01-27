@@ -8,7 +8,7 @@ Docker image for Qt WebAssembly
 ```
 - clone repository
 - cd qt-wasm
-- buildroot-env
+- docker build -t qtwa .
 ```
 
 ## Create container
