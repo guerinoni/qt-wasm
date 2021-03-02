@@ -35,7 +35,7 @@ RUN     ./configure                 \
         -opensource                 \
         -prefix $PWD/qtbase         \
         --confirm-license
-RUN     make
+RUN     make -j$(nproc)
 
 ENV     PATH "/qt-everywhere-src-5.15.2/qtbase/bin/:$PATH"
 
